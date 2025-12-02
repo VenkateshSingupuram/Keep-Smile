@@ -417,7 +417,7 @@
     <section class="proposal">
       <p class="proposal-question">So today, I just want to ask you one thing…</p>
       <p class="proposal-line">
-        From this moment, from this heart, from me to you —<br />
+        From this moment, from this heart, from Venkat to you —<br />
         <strong>Will you be mine, Samiksha?</strong>
       </p>
       <div class="buttons">
@@ -446,7 +446,7 @@
         I promise to always respect you, support you, and make you smile
         in every little way I can.  
         <br /><br />
-    <h2><strong>I love you, Samiksha ✨💖</strong> </h2>
+    <h3><strong>I love you, Samiksha ✨💖</strong> </h3>
       </p>
       <button class="modal-close" onclick="closeLoveModal()">Close</button>
     </div>
