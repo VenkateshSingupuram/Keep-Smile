@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Kalpana | From Venkat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      color: #ffffff;
+      background: radial-gradient(circle at top, #ff99c8, #4b2d5c 60%, #120016);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255, 192, 203, 0.18) 0, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.12) 0, transparent 55%);
+      opacity: 0.9;
+      z-index: -2;
+    }
+
+    .floating-hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: rgba(255, 182, 193, 0.9);
+      transform: rotate(45deg);
+      animation: floatUp 14s linear infinite;
+      opacity: 0.6;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: inherit;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -8px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: -8px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(45deg) scale(0.8);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-20vh) rotate(45deg) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    .container {
+      max-width: 520px;
+      width: 100%;
+      background: rgba(10, 0, 20, 0.6);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+      padding: 26px 22px 30px;
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      right: -120px;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(255, 105, 180, 0.35), transparent 60%);
+      z-index: -1;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ff8fab;
+      box-shadow: 0 0 8px #ff8fab;
+    }
+
+    .hero-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 34px;
+      color: #ffe6f2;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .hero-subtitle {
+      font-size: 13px;
+      text-align: center;
+      color: #f3d7ff;
+      opacity: 0.9;
+      margin-bottom: 18px;
+    }
+
+    .name-highlight {
+      font-weight: 700;
+      color: #ffd1f3;
+    }
+
+    .card {
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-title span.icon {
+      font-size: 16px;
+    }
+
+    .compliments {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 13px;
+      color: #fdf1ff;
+    }
+
+    .compliments li::before {
+      content: "♥";
+      margin-right: 6px;
+      font-size: 10px;
+      opacity: 0.8;
+      color: #ff9ecd;
+    }
+
+    .message {
+      margin-top: 16px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #fbe8ff;
+    }
+
+    .message strong {
+      color: #ffd7f5;
+      font-weight: 600;
+    }
+
+    .divider {
+      margin: 20px auto 14px;
+      width: 70%;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+    }
+
+    .proposal {
+      text-align: center;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    .proposal-question {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .proposal-line {
+      font-size: 13px;
+      color: #f9d2ff;
+      opacity: 0.95;
+    }
+
+    .buttons {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.2s ease, color 0.2s ease;
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff4d8d, #ff9a9e);
+      color: #1b0014;
+      box-shadow: 0 10px 30px rgba(255, 126, 171, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffeaff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .footer-text {
+      margin-top: 18px;
+      font-size: 11px;
+      text-align: center;
+      color: #f4d7ff;
+      opacity: 0.9;
+    }
+
+    .footer-text span {
+      font-family: 'Great Vibes', cursive;
+      font-size: 18px;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .modal {
+      background: rgba(10, 0, 25, 0.95);
+      border-radius: 20px;
+      padding: 20px 18px;
+      max-width: 320px;
+      width: 90%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #ffe1fb;
+    }
+
+    .modal-text {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #fbe9ff;
+    }
+
+    .modal-heart {
+      font-size: 26px;
+      margin: 8px 0;
+    }
+
+    .modal-close {
+      margin-top: 12px;
+      border: none;
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffe9ff;
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        padding: 28px 28px 32px;
+      }
+      .hero-title {
+        font-size: 40px;
+      }
+      .message {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <!-- Floating Hearts -->
+  <div class="floating-hearts">
+    <!-- Just a bunch of hearts at different positions -->
+    <div class="heart" style="left: 5%; animation-delay: 0s; animation-duration: 13s;"></div>
+    <div class="heart" style="left: 20%; animation-delay: 2s; animation-duration: 15s;"></div>
+    <div class="heart" style="left: 35%; animation-delay: 4s; animation-duration: 16s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 1s; animation-duration: 14s;"></div>
+    <div class="heart" style="left: 65%; animation-delay: 3s; animation-duration: 15s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 5s; animation-duration: 17s;"></div>
+    <div class="heart" style="left: 92%; animation-delay: 7s; animation-duration: 18s;"></div>
+  </div>
+
+  <main class="container">
+    <div class="tag">
+      <span class="tag-dot"></span>
+      A small secret from My Side ❤️    </div>
+
+    <h1 class="hero-title">Hi Kalpana…</h1>
+    <p class="hero-subtitle">
+      I didn’t know how to say this out loud,<br />
+      so I made this little page… just for <span class="name-highlight">you</span>.
+    </p>
+
+    <section class="card">
+      <div class="card-title">
+        <span class="icon">✨</span>
+        The way I see you
+      </div>
+      <ul class="compliments">
+        <li>Your eyes speak more than words. I can get lost in them so easily.</li>
+        <li>Your smile is the cutest thing I have ever seen, it instantly makes my day better.</li>
+        <li>When you laugh, the whole world around me feels lighter and more beautiful.</li>
+        <li>You’re not just beautiful, Kalpana… you’re unforgettable.</li>
+      </ul>
+    </section>
+
+    <section class="message">
+      <p>
+        <strong>Kalpana,</strong><br /><br />
+        I never believed that just one person could change everything… until you came into my life.
+        The way you talk, the way you smile, the way you simply exist – it all feels like
+        a gentle kind of magic that I don’t want to lose.<br /><br />
+        You are the calm in my chaos, the softness in my hard days, and the happiness
+        I didn’t even know I was missing. Every time I see you, my heart quietly says,
+        “That’s her… that’s the one.”
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="proposal">
+      <p class="proposal-question">So today, I just want to ask you one thing…</p>
+      <p class="proposal-line">
+        From this moment, from this heart, from me to you —<br />
+        <strong>Will you be mine, Kalpana?</strong>
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary" onclick="openLoveModal()">
+          YES ❤️
+        </button>
+        <button class="btn btn-secondary" onclick="openLoveModal()">
+          ALSO YES 😍
+        </button>
+      </div>
+    </section>
+
+    <p class="footer-text">
+      No matter what your answer is, you’ll always be special to me.<br />
+      <span>– Venkat</span>
+    </p>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="loveModal">
+    <div class="modal">
+      <div class="modal-title">Thank you, Kalpana 💖</div>
+      <div class="modal-heart">❤️</div>
+      <p class="modal-text">
+        You just made me the happiest person in the world.<br /><br />
+        I promise to always respect you, support you, and make you smile
+        in every little way I can.  
+        <br /><br />
+        <h3><strong>I love you, Kalpana ❤️ ✨. </strong></h3>
+      </p>
+      <button class="modal-close" onclick="closeLoveModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openLoveModal() {
+      document.getElementById('loveModal').style.display = 'flex';
+    }
+    function closeLoveModal() {
+      document.getElementById('loveModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
